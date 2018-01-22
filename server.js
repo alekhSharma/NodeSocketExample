@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
         			list_of_orgs
           				.then(function(data){       
                   			//send a message to ALL connected clients
-                  			console.log('inside list');
+                  			console.log(data);
                   			io.emit('buttonUpdate', data);
               				});
     
