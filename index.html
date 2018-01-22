@@ -9,7 +9,7 @@
       function tellTime(){
         socket.emit('showTime');
         socket.on('time', function(data) {
-        el.innerHTML =  data;
+        console.log(data);
       });
       }
 

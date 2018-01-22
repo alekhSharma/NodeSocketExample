@@ -21,13 +21,12 @@ io.on('connection', (socket) => {
 
   socket.on('showTime',function(){
   			//authorize a dev hub
-			sfdx.auth.webLogin({
-			    setdefaultdevhubusername: true,
-			    setalias: 'HubOrg'
+			sfdx.org.list({
+			    
 			})
 			.then(function(){
 			  //push source
-			  return sfdx.source.push();  
+			  return sfdx.org.list();  
 			})
 			.then(function(){
 			  console.log('Source pushed to scratch org');  
