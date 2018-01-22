@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "demodesktopdx",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekhSharma/NodeSocketExample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alekhSharma/NodeSocketExample/issues"
+  },
+  "homepage": "https://github.com/alekhSharma/NodeSocketExample#readme",
+  "description": ""
+}
