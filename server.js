@@ -24,8 +24,8 @@ io.on('connection', (socket) => {
 			sfdx.org.list({
 			    
 			})
-			.then(function(){
-			  //push source
+			.then(function(data){
+			  console.log(data);
 			  return sfdx.org.list();  
 			})
 			.then(function(){
