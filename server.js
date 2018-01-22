@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
             console.log('Org loggedin');  
           });
    
-  })
+  });
   
   socket.on('showTime',function(){
   			 
@@ -43,6 +43,6 @@ io.on('connection', (socket) => {
                   			io.emit('data',data);
               				});
     
-  })
+  });
 });
 
