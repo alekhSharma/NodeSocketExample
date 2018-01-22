@@ -20,17 +20,15 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => console.log('Client disconnected'));
 
   socket.on('showTime',function(){
-  			//authorize a dev hub
-			sfdx.org.list({
-			    
-			})
-			.then(function(data){
-			  console.log(data);
-			  return sfdx.org.list();  
-			})
-			.then(function(){
-			  console.log('Source pushed to scratch org');  
-		});
+  			 
+        			var list_of_orgs = sfdx.org.list();
+        			list_of_orgs
+          				.then(function(data){       
+                  			//send a message to ALL connected clients
+                  			console.log('inside list');
+                  			io.emit('buttonUpdate', data);
+              				});
+    
   })
 });
 
