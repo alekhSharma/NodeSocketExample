@@ -8,15 +8,11 @@
 
       function tellTime(){
         socket.emit('showTime');
-        socket.on('time', function(data) {
+        socket.on('data', function(data) {
         console.log(data);
       });
       }
 
-
-      var el = document.getElementById('server-time');
-
-      
     </script>
   </body>
 </html>
