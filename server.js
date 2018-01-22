@@ -19,6 +19,19 @@ io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('disconnect', () => console.log('Client disconnected'));
 
+  socket.on('OpenOrg',function(){
+      
+          //authorize a dev hub
+          sfdx.auth.webLogin({
+              setdefaultdevhubusername: true,
+              setalias: 'HubOrg'
+          })
+          .then(function(){
+            console.log('Org loggedin');  
+          });
+   
+  })
+  
   socket.on('showTime',function(){
   			 
         			var list_of_orgs = sfdx.org.list();
