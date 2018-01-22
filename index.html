@@ -1,0 +1,22 @@
+<html>
+  <body>
+  <button onclick="tellTime()">tell me time !</button>
+    <p id='server-time'></p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      function tellTime(){
+        socket.emit('showTime');
+        socket.on('time', function(timeString) {
+        el.innerHTML = 'Server time: ' + timeString;
+      });
+      }
+
+
+      var el = document.getElementById('server-time');
+
+      
+    </script>
+  </body>
+</html>
