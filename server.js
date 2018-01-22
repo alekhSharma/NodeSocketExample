@@ -22,11 +22,12 @@ io.on('connection', (socket) => {
   socket.on('showTime',function(){
   			 
         			var list_of_orgs = sfdx.org.list();
+              console.log(list_of_orgs);
         			list_of_orgs
           				.then(function(data){       
-                  			//send a message to ALL connected clients
+                  		
                   			console.log(data);
-                  			io.emit('buttonUpdate', data);
+                  			
               				});
     
   })
