@@ -8,8 +8,8 @@
 
       function tellTime(){
         socket.emit('showTime');
-        socket.on('time', function(timeString) {
-        el.innerHTML = 'Server time: ' + timeString;
+        socket.on('time', function(data) {
+        el.innerHTML =  data;
       });
       }
 

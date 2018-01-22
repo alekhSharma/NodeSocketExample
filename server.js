@@ -13,12 +13,25 @@ const server = express()
 
 const io = socketIO(server);
 
+const sfdx = require('sfdx-node');
+
 io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('disconnect', () => console.log('Client disconnected'));
 
   socket.on('showTime',function(){
-  	setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
+  			//authorize a dev hub
+			sfdx.auth.webLogin({
+			    setdefaultdevhubusername: true,
+			    setalias: 'HubOrg'
+			})
+			.then(function(){
+			  //push source
+			  return sfdx.source.push();  
+			})
+			.then(function(){
+			  console.log('Source pushed to scratch org');  
+		});
   })
 });
 
