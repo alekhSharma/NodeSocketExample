@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
           				.then(function(data){       
                   		
                   			console.log(data);
-                  			
+                  			io.emit('data',data);
               				});
     
   })
