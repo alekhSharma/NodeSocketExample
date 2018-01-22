@@ -1,6 +1,6 @@
 <html>
   <body>
-  <button onclick="tellTime()">tell me time !</button>
+  <button onclick="tellTime()">Open My Org</button>
     <p id='server-time'></p>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -11,6 +11,10 @@
         socket.on('data', function(data) {
         console.log(data);
       });
+      }
+      
+      function OpenOrg(){
+        socket.emit('OpenOrg');
       }
 
     </script>
